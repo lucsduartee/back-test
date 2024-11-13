@@ -9,8 +9,10 @@
 
 import router from '@adonisjs/core/services/router'
 
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+const OrdersController = () => import('#controllers/orders_controller')
+
+router.group(() => {
+  router.get('/', () => ({ hello: 'world' }))
+  router.post('/orders', [OrdersController, 'create'])
+  router.put('/orders', [OrdersController, 'update'])
+}).prefix('/api')
