@@ -9,6 +9,10 @@ Segue abaixo uma simplificação das entidades do que viria a ser um backend e u
 ![backend](back.png)
 ![frontend](front.png)
 
+## Etapas do desenvolvimento
+
+![frontend](board.png)
+
 ## Como uppar o projeto?
 Para uppar o projeto é necessário fazer o clone de dois repositórios em um diretório como base,
 exemplo `/path/back-test` e `/path/front-test`:
