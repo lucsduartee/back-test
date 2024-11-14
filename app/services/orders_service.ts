@@ -1,10 +1,19 @@
 import { HttpContext } from "@adonisjs/core/http";
-import User from "#models/user";
+import Order from "#models/order";
 
 export default class OrdersService {
+  async all() {
+    const orders = await Order.all();
+
+    return orders;
+  }
+
   async create(ctx: HttpContext) {
-    const user = await User.create({})
-    console.log('user', user)
-    return user
+    const body = ctx.request.body();
+    const order = await Order.create({
+      value: body.value,
+    });
+
+    return order;
   }
 }

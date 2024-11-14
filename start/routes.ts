@@ -16,6 +16,6 @@ router.group(() => {
   router.get('/', () => ({ hello: 'world' }))
   router.get('/categories', [CategoriesController, 'index'])
   router.get('/categories/:name/products', [CategoriesController, 'index'])
+  router.get('/orders', [OrdersController, 'index'])
   router.post('/orders', [OrdersController, 'create'])
-  router.put('/orders', [OrdersController, 'update'])
 }).prefix('/api')

@@ -8,12 +8,15 @@ export default class OrdersController {
     private ordersService: OrdersService
   ) {}
 
-  create(ctx: HttpContext) {
-    console.log('ctx', ctx.request.body())
-    const order = this.ordersService.create(ctx);
+  index() {
+    const order = this.ordersService.all();
 
     return order;
   }
 
-  update() {}
+  create(ctx: HttpContext) {
+    const order = this.ordersService.create(ctx);
+
+    return order;
+  }
 }
